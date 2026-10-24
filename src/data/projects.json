@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ID1",
+    "title": "T1",
+    "summary": "lorem ipsum dolor sit amet.",
+    "tags": ["React", "TypeScript"],
+    "repoUrl": "",
+    "liveUrl": "",
+    "featured": true,
+    "status": "complete"
+  },
+  {
+    "id": "ID2",
+    "title": "T2",
+    "summary": "lorem ipsum dolor sit amet.",
+    "tags": ["React", "TypeScript"],
+    "repoUrl": "",
+    "featured": true,
+    "status": "in-progress"
+  },
+  {
+    "id": "ID3",
+    "title": "T3",
+    "summary": "lorem ipsum dolor sit amet.",
+    "tags": ["Node.js"],
+    "repoUrl": "",
+    "status": "complete"
+  }
+]
