@@ -5,13 +5,26 @@ import type { Project } from "../types/project";
 export function useProjects() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    getProjects().then((result) => {
-      setProjects(result);
-      setLoading(false);
-    });
+    let cancelled = false;
+
+    getProjects()
+      .then((result) => {
+        if (!cancelled) setProjects(result);
+      })
+      .catch(() => {
+        if (!cancelled) setError("Couldn't load projects.");
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
-  return { projects, loading };
+  return { projects, loading, error };
 }

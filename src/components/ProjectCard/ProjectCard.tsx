@@ -6,6 +6,9 @@ export default function ProjectCard({ project }: { project: Project }) {
     <article className={styles.card}>
       <h3>{project.title}</h3>
       <p>{project.summary}</p>
+      {project.status === "in-progress" && (
+        <span className={styles.badge}>In progress</span>
+      )}
       <ul className={styles.tags} aria-label="Technologies">
         {project.tags.map((tag) => (
           <li key={tag}>{tag}</li>
