@@ -39,3 +39,26 @@
   padding: 2rem 1rem;
   margin: 2rem 0;
 }
+
+.latest { margin: 0 0 0.75rem; }
+
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills li {
+  font-size: 0.8rem;
+  padding: 0.1rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}

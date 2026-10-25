@@ -1,0 +1,54 @@
+{
+  "work": [
+    {
+      "id": "kal-se",
+      "role": "Software Engineer",
+      "company": "KAL ATM Software",
+      "location": "Mumbai, India",
+      "start": "05-2025",
+      "end": "08-2026",
+      "highlights": [
+        "Built and maintained Application for 2000+ ATMs across Europe and Asia."
+      ],
+      "tech": ["React", "TypeScript", "C#"]
+    },
+    {
+      "id": "kal-gse",
+      "role": "Graduate Software Engineer",
+      "company": "KAL ATM Software",
+      "location": "Mumbai, India",
+      "start": "05-2025",
+      "end": "08-2026",
+      "highlights": [
+        "Built and maintained Application for 2000+ ATMs across Europe and Asia."
+      ],
+      "tech": ["React", "TypeScript", "C#"]
+    },
+    {
+      "id": "startup-intern",
+      "role": "Software Engineering Intern",
+      "company": "Root2AI",
+      "location": "Remote",
+      "start": "10-2021",
+      "end": "11-2021",
+      "highlights": [
+        "Developed Websites."
+      ],
+      "tech": ["HTML", "CSS", "JavaScript"]
+    }
+  ],
+  "education": [
+    {
+      "id": "uni-bsc",
+      "degree": "B.Tech in Computer Engineering",
+      "school": "Your University",
+      "start": "2019-08",
+      "end": "2023-05"
+    }
+  ],
+  "skills": [
+    { "category": "Languages", "items": ["TypeScript", "JavaScript", "Python"] },
+    { "category": "Frontend", "items": ["React", "HTML", "CSS"] },
+    { "category": "Backend & Tools", "items": ["C#", "PostgreSQL", "Git", "GitHub Actions"] }
+  ]
+}

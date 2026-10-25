@@ -1,11 +1,16 @@
 import ButtonLink from "../ButtonLink/ButtonLink";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { useProjects } from "../../hooks/useProjects.ts";
+import { useExperience } from "../../hooks/useExperience";
+import { formatRange } from "../../utils/formatDate";
 import styles from "./Home.module.css";
 
 export default function Home() {
   const { projects, loading } = useProjects();
   const featured = projects.filter((p) => p.featured).slice(0, 3);
+  const { data: experience } = useExperience();
+  const latest = experience?.work[0];
+  const topSkills = experience?.skills.flatMap((g) => g.items).slice(0, 8) ?? [];
 
   return (
     <>
@@ -47,9 +52,22 @@ export default function Home() {
             Full experience →
           </ButtonLink>
         </div>
-        <p>
-          Todo add experience and skills summary
-        </p>
+        {latest && (
+          <p className={styles.latest}>
+            <strong>
+              {latest.role} · {latest.company}
+            </strong>
+            <br />
+            <span className={styles.muted}>
+              {formatRange(latest.start, latest.end)}
+            </span>
+          </p>
+        )}
+        <ul className={styles.skills} aria-label="Top skills">
+          {topSkills.map((s) => (
+            <li key={s}>{s}</li>
+          ))}
+        </ul>
       </section>
 
       <section className={`${styles.block} ${styles.cta}`}>
