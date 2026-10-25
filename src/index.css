@@ -74,3 +74,15 @@ a { color: var(--accent); }
   font-size: 0.875rem;
   border-top: 1px solid var(--border);
 }
+
+:root {
+  /* ...existing variables... */
+  --error: #dc2626;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* ...existing variables... */
+    --error: #f87171;
+  }
+}
