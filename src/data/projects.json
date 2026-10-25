@@ -1,29 +1,33 @@
+
 [
   {
-    "id": "ID1",
-    "title": "T1",
-    "summary": "lorem ipsum dolor sit amet.",
-    "tags": ["React", "TypeScript"],
-    "repoUrl": "",
+    "id": "fetal-brain-segmentation",
+    "title": "Fetal Brain Component Segmentation",
+    "summary": "Conducted a comparative study of machine learning models for fetal brain image segmentation as a B.Tech final-year project.",
+    "tags": ["Python", "Machine Learning", "Medical Image Segmentation"],
+    "repoUrl": "https://drive.google.com/file/d/1oZpVmWNuSSjYgmWG5-FsxM0-oiG9wHoW/view?usp=sharing",
+    "liveUrl": "",
+    "featured": false,
+    "status": "complete"
+  },
+  {
+    "id": "shell",
+    "title": "OS Programming and Shell Scripting",
+    "summary": "Implemented system calls, threads, process management, shell scripting, and ncurses-based interfaces.",
+    "tags": ["C", "Operating Systems", "Shell Scripting", "Linux"],
+    "repoUrl": "https://github.com/RahulREg/Shell_CL",
     "liveUrl": "",
     "featured": true,
     "status": "complete"
   },
   {
-    "id": "ID2",
-    "title": "T2",
-    "summary": "lorem ipsum dolor sit amet.",
-    "tags": ["React", "TypeScript"],
-    "repoUrl": "",
+    "id": "portfolio",
+    "title": "Personal Portfolio",
+    "summary": "Built a responsive portfolio website using HTML, SCSS, and vanilla JavaScript to showcase my skills and experience.",
+    "tags": ["HTML", "SCSS", "JavaScript"],
+    "repoUrl": "https://github.com/RahulREg/portfolio",
+    "liveUrl": "https://rahulreg.github.io/portfolio/",
     "featured": true,
-    "status": "in-progress"
-  },
-  {
-    "id": "ID3",
-    "title": "T3",
-    "summary": "lorem ipsum dolor sit amet.",
-    "tags": ["Node.js"],
-    "repoUrl": "",
     "status": "complete"
   }
 ]
