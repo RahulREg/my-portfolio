@@ -39,11 +39,18 @@
   ],
   "education": [
     {
-      "id": "uni-bsc",
-      "degree": "B.Tech in Computer Engineering",
-      "school": "Your University",
-      "start": "2019-08",
-      "end": "2023-05"
+      "id": "iit-kgp",
+      "degree": "M.Tech in Computer Science and Engineering",
+      "school": "IIT Kharagpur",
+      "start": "08-2023",
+      "end": "04-2025"
+    },
+    {
+      "id": "gcelt",
+      "degree": "B.Tech in Computer Science and Engineering",
+      "school": "Government College of Engineering and Leather Technology",
+      "start": "08-2019",
+      "end": "04-2023"
     }
   ],
   "skills": [
