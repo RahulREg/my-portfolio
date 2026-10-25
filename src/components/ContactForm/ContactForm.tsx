@@ -67,7 +67,8 @@ export default function ContactForm() {
             });
             setStatus("success");
             setValues(empty);
-        } catch {
+        } catch (err) {
+            console.error("Contact form error:", err);
             setStatus("error");
         }
     }
