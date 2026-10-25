@@ -17,7 +17,9 @@ export default function Home() {
       <section className={styles.hero}>
         <h1>Hi, I'm Rahul Ram</h1>
         <p className={styles.lead}>
-          Todo add short intro
+          Software Engineer passionate about building reliable software and
+          intuitive web experiences. I work with C#, React, and TypeScript,
+          and enjoy solving problems through clean, maintainable code.
         </p>
         <div className={styles.actions}>
           <ButtonLink to="/projects">View my projects</ButtonLink>

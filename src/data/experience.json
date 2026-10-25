@@ -1,3 +1,4 @@
+
 {
   "work": [
     {
@@ -5,12 +6,15 @@
       "role": "Software Engineer",
       "company": "KAL ATM Software",
       "location": "Mumbai, India",
-      "start": "05-2025",
-      "end": "08-2026",
+      "start": "08-2026",
+      "end": null,
       "highlights": [
-        "Built and maintained Application for 2000+ ATMs across Europe and Asia."
+        "Contribute to ATM applications deployed across 2,000+ ATMs in Europe and Asia for three international banks.",
+        "Develop customer-facing interfaces and transaction workflows using React and TypeScript, with C# in the application layer.",
+        "Maintain workflows for cash withdrawals, deposits, bill payments, balance inquiries, mini statements, PIN management, and voice guidance.",
+        "Debug application flows and investigate host-system communication issues."
       ],
-      "tech": ["React", "TypeScript", "C#"]
+      "tech": ["React", "TypeScript", "C#", "JavaScript"]
     },
     {
       "id": "kal-gse",
@@ -20,42 +24,87 @@
       "start": "05-2025",
       "end": "08-2026",
       "highlights": [
-        "Built and maintained Application for 2000+ ATMs across Europe and Asia."
+        "Contributed to ATM applications deployed across 100+ ATMs in Europe and Asia for two international banks.",
+        "Resolved hundreds of software defects across customer-facing and supervisor applications.",
+        "Contributed to multiple Change Requests and investigated transaction-processing issues."
       ],
-      "tech": ["React", "TypeScript", "C#"]
+      "tech": ["React", "TypeScript", "C#", "JavaScript"]
     },
     {
-      "id": "startup-intern",
-      "role": "Software Engineering Intern",
+      "id": "iit-kgp-ta",
+      "role": "Teaching Assistant",
+      "company": "IIT Kharagpur",
+      "location": "Kharagpur, India",
+      "start": "07-2024",
+      "end": "04-2025",
+      "highlights": [
+        "Evaluated assignments for Algorithm 1 and High Performance in Computer Architecture.",
+        "Supported students during programming labs."
+      ],
+      "tech": ["Algorithms", "Computer Architecture"]
+    },
+    {
+      "id": "root2ai-intern",
+      "role": "Web Development Intern",
       "company": "Root2AI",
       "location": "Remote",
       "start": "10-2021",
       "end": "11-2021",
       "highlights": [
-        "Developed Websites."
+        "Developed frontend components for a West Bengal election-data website using HTML, CSS, and JavaScript.",
+        "Built interactive visualizations using Plotly.js and Election Commission of India data."
       ],
-      "tech": ["HTML", "CSS", "JavaScript"]
+      "tech": ["HTML", "CSS", "JavaScript", "Plotly.js"]
     }
   ],
   "education": [
     {
       "id": "iit-kgp",
       "degree": "M.Tech in Computer Science and Engineering",
-      "school": "IIT Kharagpur",
+      "school": "Indian Institute of Technology, Kharagpur",
       "start": "08-2023",
-      "end": "04-2025"
+      "end": "04-2025",
+      "grade": "8.66 CGPA"
     },
     {
       "id": "gcelt",
       "degree": "B.Tech in Computer Science and Engineering",
       "school": "Government College of Engineering and Leather Technology",
       "start": "08-2019",
-      "end": "04-2023"
+      "end": "04-2023",
+      "grade": "9.45 CGPA"
+    },
+    {
+      "id": "st-sebastians",
+      "degree": "ISC (Class XII)",
+      "school": "St. Sebastian's School",
+      "end": "05-2019",
+      "grade": "91.33%"
+    },
+    {
+      "id": "harvard-house",
+      "degree": "ICSE (Class X)",
+      "school": "Harvard House High School",
+      "end": "05-2019",
+      "grade": "91.00%"
     }
   ],
   "skills": [
-    { "category": "Languages", "items": ["TypeScript", "JavaScript", "Python"] },
-    { "category": "Frontend", "items": ["React", "HTML", "CSS"] },
-    { "category": "Backend & Tools", "items": ["C#", "PostgreSQL", "Git", "GitHub Actions"] }
+    {
+      "category": "Languages",
+      "items": ["Java", "C#", "JavaScript", "TypeScript"]
+    },
+    {
+      "category": "Frontend",
+      "items": ["React"]
+    },
+    {
+      "category": "Databases",
+      "items": ["SQL"]
+    },
+    {
+      "category": "Tools",
+      "items": ["Git", "Azure DevOps (TFS)"]
+    }
   ]
 }
