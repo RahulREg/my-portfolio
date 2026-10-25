@@ -3,7 +3,7 @@ export interface WorkExperience {
   role: string;
   company: string;
   location?: string;
-  start: string;       // "YYYY-MM"
+  start: string;
   end: string | null;  // null means "Present"
   highlights: string[];
   tech?: string[];
@@ -13,7 +13,7 @@ export interface Education {
   id: string;
   degree: string;
   school: string;
-  start: string;       // "YYYY-MM"
+  start: string | null;
   end: string | null;
 }
 

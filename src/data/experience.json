@@ -78,6 +78,7 @@
       "id": "st-sebastians",
       "degree": "ISC (Class XII)",
       "school": "St. Sebastian's School",
+      "start": null,
       "end": "05-2019",
       "grade": "91.33%"
     },
@@ -85,6 +86,7 @@
       "id": "harvard-house",
       "degree": "ICSE (Class X)",
       "school": "Harvard House High School",
+      "start": null,
       "end": "05-2019",
       "grade": "91.00%"
     }
