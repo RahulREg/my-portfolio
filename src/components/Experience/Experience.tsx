@@ -1,3 +1,11 @@
+/**
+ * Experience page: work history, education and skills, rendered from
+ * experience.json.
+ *
+ * Content lives in JSON so updating a job or adding a skill never requires
+ * touching this component. Entries are shown in the order they appear in the
+ * file.
+ */
 import { useExperience } from "../../hooks/useExperience";
 import { formatRange } from "../../utils/formatDate";
 import styles from "./Experience.module.css";
@@ -51,6 +59,8 @@ export default function Experience() {
               {data.education.map((ed) => (
                 <li key={ed.id} className={styles.entry}>
                   <h3>{ed.degree}</h3>
+                  {/* formatRange handles a missing start date (school entries
+                      show only the completion month). */}
                   <p className={styles.meta}>
                     {ed.school} · {formatRange(ed.start, ed.end)}
                   </p>

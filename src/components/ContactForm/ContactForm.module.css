@@ -58,12 +58,3 @@
 
 .submit:hover:not(:disabled) { opacity: 0.85; }
 .submit:disabled { opacity: 0.6; cursor: wait; }
-
-/* Off-screen rather than display:none, since some bots skip hidden fields */
-.trap {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}

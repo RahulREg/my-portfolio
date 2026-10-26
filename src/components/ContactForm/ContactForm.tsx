@@ -3,19 +3,24 @@ import type { FormEvent } from "react";
 import { sendContact } from "../../services/contactService";
 import styles from "./ContactForm.module.css";
 
+// The form is a small state machine. Modelling the lifecycle as one union
+// (rather than separate isSending / isSuccess / isError booleans) makes
+// contradictory combinations, such as "sending and failed", impossible.
 type Status = "idle" | "sending" | "success" | "error";
+// Fields a visitor can get wrong.
 type Field = "name" | "email" | "message";
 type Errors = Partial<Record<Field, string>>;
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const empty = { name: "", email: "", message: "", _gotcha: "" };
+const empty = { name: "", email: "", message: "" };
 
+/**
+ * Pure validation: values in, error messages out. Returns an empty object
+ * when everything is valid.
+ */
 function validate(values: typeof empty): Errors {
     const errors: Errors = {};
     if (!values.name.trim()) errors.name = "Please enter your name.";
     if (!values.email.trim()) errors.email = "Please enter your email.";
-    else if (!EMAIL_RE.test(values.email.trim()))
-        errors.email = "That email doesn't look right.";
     if (values.message.trim().length < 10)
         errors.message = "Please write at least a short message (10+ characters).";
     return errors;
@@ -34,29 +39,22 @@ export default function ContactForm() {
         setStatus((prev) => (prev === "sending" ? prev : "idle"));
 
         // Clear the error for the field being edited.
-        if (field !== "_gotcha") {
-            setErrors((prev) => {
-                const next = { ...prev };
-                delete next[field];
-                return next;
-            });
-        }
+        setErrors((prev) => {
+            const next = { ...prev };
+            delete next[field];
+            return next;
+        });
     }
 
     async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+        // Stop the browser's default full-page form POST. We submit with
+        // fetch instead so the visitor stays on the page.
         e.preventDefault();
         if (status === "sending") return;
 
         const found = validate(values);
         setErrors(found);
         if (Object.keys(found).length > 0) return;
-
-        // Bots fill the hidden field. Pretend it worked and send nothing.
-        if (values._gotcha) {
-            setStatus("success");
-            setValues(empty);
-            return;
-        }
 
         setStatus("sending");
         try {
@@ -68,6 +66,8 @@ export default function ContactForm() {
             setStatus("success");
             setValues(empty);
         } catch (err) {
+            // The UI shows one generic message; the real cause goes to the
+            // console for debugging (missing endpoint, 403, network, etc.).
             console.error("Contact form error:", err);
             setStatus("error");
         }
@@ -76,6 +76,9 @@ export default function ContactForm() {
     const sending = status === "sending";
 
     return (
+        // noValidate turns off the browser's built-in validation pop-ups so
+        // our own inline messages are the only ones shown, with consistent
+        // wording and styling.
         <form className={styles.form} onSubmit={handleSubmit} noValidate>
             <div className={styles.field}>
                 <label htmlFor="name">Name</label>
@@ -133,19 +136,8 @@ export default function ContactForm() {
                 )}
             </div>
 
-            {/* Honeypot: hidden from people and screen readers, bots tend to fill it */}
-            <div className={styles.trap} aria-hidden="true">
-                <label htmlFor="_gotcha">Leave this field empty</label>
-                <input
-                    id="_gotcha"
-                    name="_gotcha"
-                    tabIndex={-1}
-                    autoComplete="off"
-                    value={values._gotcha}
-                    onChange={(e) => update("_gotcha", e.target.value)}
-                />
-            </div>
-
+            {/* Disabled while sending to prevent duplicate submissions, with
+                text feedback so the visitor knows something is happening. */}
             <button type="submit" className={styles.submit} disabled={sending}>
                 {sending ? "Sending…" : "Send message"}
             </button>
@@ -156,6 +148,12 @@ export default function ContactForm() {
                         Thanks! Your message was sent. I'll get back to you soon.
                     </p>
                 )}
+                {/* Failures need immediate attention. If the message just appeared
+                    silently, a screen reader user would never know the send failed and
+                    might assume it worked. role="alert" makes assistive tech announce it
+                    right away, interrupting whatever it is reading.
+                    The text offers a way out (retry, or the mailto link on this page) so
+                    a failed send never leaves the visitor with no way to reach me. */}
                 {status === "error" && (
                     <p className={styles.error} role="alert">
                         Something went wrong sending your message. Please try again, or

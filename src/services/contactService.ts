@@ -6,7 +6,13 @@ export interface ContactPayload {
 
 const ENDPOINT = import.meta.env.VITE_CONTACT_ENDPOINT;
 
+/**
+ * Sends one contact message.
+ *
+ * Resolves on success and throws on any failure.
+ */
 export async function sendContact(payload: ContactPayload): Promise<void> {
+  // This is easier to diagnose than a request to "undefined".
   if (!ENDPOINT) {
     throw new Error("Contact endpoint is not configured.");
   }
@@ -15,6 +21,8 @@ export async function sendContact(payload: ContactPayload): Promise<void> {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      // Asks the provider to answer with JSON instead of redirecting the
+      // browser to its own "thank you".
       Accept: "application/json",
     },
     body: JSON.stringify(payload),

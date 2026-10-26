@@ -26,11 +26,13 @@ export default function Layout() {
         </nav>
       </header>
 
+      {/* The matched child route (Home, Projects, ...) renders here. */}
       <main className="content">
         <Outlet />
       </main>
 
       <footer className="footer">
+        {/* Computed at render time so the year never goes stale. */}
         © {new Date().getFullYear()} Rahul Ram
       </footer>
     </div>

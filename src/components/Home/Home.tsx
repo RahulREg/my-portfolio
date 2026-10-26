@@ -54,6 +54,7 @@ export default function Home() {
             Full experience →
           </ButtonLink>
         </div>
+        {/* Renders nothing until the data has loaded. */}
         {latest && (
           <p className={styles.latest}>
             <strong>

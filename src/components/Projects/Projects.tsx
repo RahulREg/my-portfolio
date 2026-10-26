@@ -1,14 +1,25 @@
+/**
+ * Projects page: every project, filterable by technology tag.
+ *
+ * Data comes from useProjects. The only state owned here is which filter chip
+ * is active. Everything else (tag list, visible projects) is derived from
+ * that state and the data on each render.
+ */
 import { useState } from "react";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { useProjects } from "../../hooks/useProjects";
 import styles from "./Projects.module.css";
 
+// Sentinel for "no filter". Kept as a constant so the chip label and the
+// comparison below can never drift apart.
 const ALL = "All";
 
 export default function Projects() {
   const { projects, loading, error } = useProjects();
   const [activeTag, setActiveTag] = useState(ALL);
 
+  // The chips are built from the data, so adding a project with a new tag
+  // creates its chip automatically. Set removes duplicates across projects.
   const tags = [ALL, ...new Set(projects.flatMap((p) => p.tags))];
   const visible =
     activeTag === ALL

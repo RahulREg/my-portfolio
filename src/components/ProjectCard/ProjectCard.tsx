@@ -1,3 +1,10 @@
+/**
+ * Presentational card for one project.
+ *
+ * "Presentational" means it receives data through props and owns no state or
+ * data fetching, so it is reused unchanged on Home (featured) and Projects
+ * (all). Keeping it free of loading logic makes it trivial to test and reuse.
+ */
 import type { Project } from "../../types/project";
 import styles from "./ProjectCard.module.css";
 
